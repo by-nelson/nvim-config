@@ -6,7 +6,7 @@ This repository has the scripts and files needed to setup nvim for development
 To install Neovim for an user then run with that user:
 
 ```sh
-.scripts/install_neovim.sh
+./scripts/install_neovim.sh
 ```
 
 # Author
