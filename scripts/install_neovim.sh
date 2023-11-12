@@ -12,7 +12,6 @@ artifacts_path="${root_path}/artifacts"
 target_path="${artifacts_path}/nvim-linux64.tar.gz"
 
 
-
 # Start script
 echo "Installing Neovim version $nvim_version"
 
@@ -63,3 +62,23 @@ if [ ! -f ~/.local/bin/nvim ]; then
 else
 	echo "Binary link already created here: ~/.local/bin/nvim"
 fi
+
+
+# Add link to binary using global access
+# Installation is performed for all users
+
+if [ ! -f /bin/nvim ]; then
+	sudo ln -s ~/.local/share/nvim-linux64/bin/nvim /bin/nvim
+	echo "Link created to binary in /bin"
+else
+	echo "Binary link already created here: /bin/nvim"
+fi
+
+
+
+
+
+
+
+
+
