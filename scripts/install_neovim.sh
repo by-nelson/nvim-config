@@ -11,6 +11,9 @@ root_path="."
 artifacts_path="${root_path}/artifacts"
 target_path="${artifacts_path}/nvim-linux64.tar.gz"
 
+font_path="${artifacts_path}/Hack.zip"
+fonts_dir="/usr/share/fonts"
+
 
 # Start script
 echo "Installing Neovim version $nvim_version"
@@ -29,6 +32,22 @@ if [ ! -f ${target_path} ]; then
 else
 	echo "Nvim tar file already exists here: $target_path"
 fi
+
+# Download patched font
+if [ ! -f $font_path ]; then
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip -O $font_path
+fi
+
+if [ ! -d ${fonts_dir}/Hack ]; then
+    sudo mkdir ${fonts_dir}/Hack
+    sudo unzip $font_path -d $fonts_dir/Hack
+    echo "Font ${font_path} extracted to ${fonts_dir}"
+else
+    echo "Font ${font_path} already extracted to ${fonts_dir}"
+fi
+
+# Update font cache
+sudo fc-cache -fv
 
 # Verify checksum
 file_checksum=`sha256sum ${target_path} | awk '{print $1}'`

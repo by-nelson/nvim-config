@@ -5,4 +5,12 @@ return require('packer').startup(function()
 
     -- Appearance
     use 'projekt0n/github-nvim-theme'
+
+    -- Navigation
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons',
+        },
+    }
 end)

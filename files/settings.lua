@@ -2,6 +2,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+-- Appearance
 require('github-theme').setup({
     specs = {
         github_dark = {
@@ -12,3 +13,7 @@ require('github-theme').setup({
 })
 
 vim.cmd('colorscheme github_dark')
+
+
+-- Navigation
+require('nvim-tree').setup({})
