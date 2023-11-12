@@ -14,6 +14,18 @@ require('github-theme').setup({
 
 vim.cmd('colorscheme github_dark')
 
-
 -- Navigation
 require('nvim-tree').setup({})
+
+-- Highlighting
+require('nvim-treesitter.configs').setup{
+
+    ensure_installed = {'c', 'lua', 'hcl', 'terraform'},
+
+    sync_install = false,
+    auto_install = true,
+
+    highlight = {
+        enable = true,
+    },
+}

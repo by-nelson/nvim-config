@@ -13,4 +13,7 @@ return require('packer').startup(function()
             'nvim-tree/nvim-web-devicons',
         },
     }
+
+    -- Highlighting
+    use 'nvim-treesitter/nvim-treesitter'
 end)

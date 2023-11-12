@@ -41,13 +41,15 @@ fi
 if [ ! -d ${fonts_dir}/Hack ]; then
     sudo mkdir ${fonts_dir}/Hack
     sudo unzip $font_path -d $fonts_dir/Hack
+
+    # Update font cache
+    sudo fc-cache -fv
+
     echo "Font ${font_path} extracted to ${fonts_dir}"
 else
     echo "Font ${font_path} already extracted to ${fonts_dir}"
 fi
 
-# Update font cache
-sudo fc-cache -fv
 
 # Verify checksum
 file_checksum=`sha256sum ${target_path} | awk '{print $1}'`
