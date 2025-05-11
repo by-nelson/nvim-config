@@ -20,6 +20,7 @@ return require('packer').startup(function()
     -- Mason for easy LSP installation
     use { 
         'williamboman/mason.nvim',
+        tag = "v1.11.0",
         config = function()
             require('mason').setup()
         end
@@ -27,6 +28,7 @@ return require('packer').startup(function()
 
     use { 
         'williamboman/mason-lspconfig.nvim',
+        tag = "v1.32.0",
         after = 'mason.nvim',
         config = function()
             require('mason-lspconfig').setup {
