@@ -8,4 +8,5 @@ return {
   { import = "plugins.git" },
   { "folke/trouble.nvim", config = true },
   { "towolf/vim-helm" },
+  { "github/copilot.vim" },
 }
